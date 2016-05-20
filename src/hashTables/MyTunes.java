@@ -1,4 +1,5 @@
 package hashTables;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,6 +9,12 @@ import java.util.Scanner;
 import cs1c.MillionSongDataSubset;
 import cs1c.SongEntry;
 
+/**
+ * Tests the functionality of FHhashQPwFind.java.
+ * Specifically checks for implementation of find() function to return an object associated with a given key input.
+ *
+ * @author Foothill College, [YOUR NAME HERE]
+ */
 public class MyTunes 
 {
 	public static final boolean SHOW_DETAILS = false;
@@ -51,8 +58,8 @@ public class MyTunes
 	}
 
 	/**
-	 * Uses CSVReader to read all songs from data file.
-	 * @param FILENAME		A CSV file to parse
+	 * Uses MillionSongDataSubset to read all songs from data file.
+	 * @param FILENAME		A JSON file to parse
 	 * @return				The array of SongEntry objects
 	 */
 	public static SongEntry [] readSongsFromDataFile(String FILENAME)
@@ -65,6 +72,9 @@ public class MyTunes
 		// retrieves the parsed objects
 		SongEntry [] allSongs = msd.getArrayOfSongs();
 
+		// displays the number of songs read from the input file
+		System.out.printf("Total number of songs read %d \n", allSongs.length);
+		
 		return allSongs;
 	}
 
@@ -114,6 +124,8 @@ public class MyTunes
 	 */
 	public void testIDtable(String filename) 
 	{
+		System.out.printf("Test file for id table: %s \n", filename);
+
 		ArrayList<String> idsToFind = readFindRequests(filename);
 
 		for (String idStr : idsToFind)
@@ -145,7 +157,7 @@ public class MyTunes
 			} 
 		} // for all requested IDs to find
 
-		System.out.printf("Done with testIDtable() with input file \"%s\" \n\n", filename);
+		System.out.println("Done with testing table of ids.\n");
 	}
 
 	/**
@@ -154,6 +166,8 @@ public class MyTunes
 	 */
 	private void testGenreTable(String filename) 
 	{
+		System.out.printf("Test file for genre table: %s \n", filename);
+
 		System.out.println("\nNumber of store songs in each genre:");
 		ArrayList<String> genreKeys = this.genreNames;
 
@@ -185,13 +199,13 @@ public class MyTunes
 			} 
 		} // for all requested IDs to find
 
-		System.out.printf("Done with testGenreTable() with input file \"%s\" \n\n", filename);
+		System.out.println("Done with testing table of genres.\n");
 	}
 
 
 	/**
-	 * Creates one object of type CSVReader class, which reads input from a CSV file. Uses the
-	 * attributes stored in CSVReader object to store all entries in an array of SongEntry objects.
+	 * Creates an object of type MyTunes class that, which reads the song information from a JSON input file
+	 * and stores all entries in an array of SongEntry objects.
 	 * Constructs an object of MyTunes, which populates two hash tables.
 	 * Each tables uses different attribute of SongEntry class as the key to find. 
 	 * Tests finding keys in each hash table and reports whether requested key is found.
