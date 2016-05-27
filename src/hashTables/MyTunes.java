@@ -13,7 +13,7 @@ import cs1c.SongEntry;
  * Tests the functionality of FHhashQPwFind.java.
  * Specifically checks for implementation of find() function to return an object associated with a given key input.
  *
- * @author Foothill College, [YOUR NAME HERE]
+ * @author Foothill College, [Swati]
  */
 public class MyTunes 
 {
@@ -188,6 +188,7 @@ public class MyTunes
 			try
 			{
 				SongsCompGenre compResult  = tableOfGenres.find(genre);
+				
 				if (compResult != null)
 				{
 					System.out.printf("Genre \"%s\" found in tableOfGenres. \n", genre);
