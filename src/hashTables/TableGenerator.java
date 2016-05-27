@@ -27,7 +27,11 @@ public class TableGenerator {
 		 genreNames = new ArrayList<String>();
 	 }
 
-	//populates the tableOfIDs hash table
+    /**
+     * populates the tableOfIDs hash table
+     * @param allSongs array of songs
+     * @return tableOfIDs
+     */
 	public FHhashQPwFind<Integer, SongCompInt> populateIDtable(SongEntry[] allSongs) {
 		
 		for(int i = 0; i < allSongs.length; i++)
@@ -37,7 +41,11 @@ public class TableGenerator {
 		return tableOfSongIDs;
 	}
 
-	// populates the tableOfGenres hash table and ArrayList of genre names.
+	/**
+	 * populates the tableOfGenres hash table and ArrayList of genre names.
+	 * @param allSongs array of songs
+	 * @return tableOfGenres 
+	 */
 	public FHhashQPwFind<String, SongsCompGenre> populateGenreTable(SongEntry[] allSongs) {
 		
 		for(int i = 0; i < allSongs.length; i++)

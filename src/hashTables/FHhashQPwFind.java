@@ -2,12 +2,19 @@ package hashTables;
 
 import java.util.NoSuchElementException;
 
+/**
+ * extends class FHhashQP<E> and finds objects based on key
+ * @author swati
+ * @param <KeyType> objects comparison key
+ * @param <E> generic object
+ */
+
 public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> > extends FHhashQP<E> 
 {
 	/**
-	 *  returns the found object, or throws a java.util.NoSuchElementException
-	 * @param key
-	 * @return
+	 *  
+	 * @param key Object key to find object in table
+	 * @return found object, or throws a java.util.NoSuchElementException
 	 */
 	public E find( KeyType key )
 	{				
@@ -22,7 +29,7 @@ public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> > extends FHha
 	/**
 	 * called by find() which finds the position based on the key, not on the object
 	 * @param key
-	 * @return
+	 * @return index of object having same key as object
 	 */
 	 public int findPosKey( KeyType key)
 	 {
@@ -44,7 +51,7 @@ public class FHhashQPwFind<KeyType, E extends Comparable<KeyType> > extends FHha
 	    /**
 		 * called by findPosKey() which gets the hash value based on the key, not on the object
 		 * @param key
-		 * @return
+		 * @return hashcode of key
 		 */
 		public int myHashKey( KeyType key)
 		{
