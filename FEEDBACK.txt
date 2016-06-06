@@ -1,0 +1,13 @@
+FEEDBACK:
+
+Excellent implementation of find and helper method findPosKey() 
+	in class FHhasQPwFind,
+	especially in the use of inheritance!
+
+	
+-0.5 Incomplete documentation of your source code
+   for SongCompInt class, SongCompGenre class, etc.
+   Next  time minus one for each class.
+
+-Bita.
+
